@@ -1,0 +1,190 @@
+{% extends "myportfolio_app/base.html" %}
+{% load static %}
+{% block title %}Projects | Muhammad Ali{% endblock %}
+{% block nav_projects %}active{% endblock %}
+{% block content %}
+<!-- ============================================================
+     PAGE HERO — PROJECTS
+============================================================ -->
+<section class="page-hero">
+    <div class="page-hero-bg-orbs">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+    </div>
+    <div class="container">
+        <div class="page-hero-content">
+            <span class="section-tag">My Work</span>
+            <h1 class="page-hero-title">
+                Featured <span class="accent">Projects</span>
+            </h1>
+            <p class="page-hero-subtitle">
+                A curated showcase of real-world projects built with passion,
+                precision, and modern technologies.
+            </p>
+            <!-- Filter Tabs -->
+            <div class="filter-tabs" id="filterTabs">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="django">Django</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================================================
+     PROJECTS GRID  (Dynamic — from Django Admin)
+============================================================ -->
+<section class="projects-section section" id="projects">
+    <div class="container">
+        {% if projects %}
+        <div class="projects-grid" id="projectsGrid">
+            {% for project in projects %}
+            <article class="project-card" data-tech="{{ project.technology|lower }}" id="project-{{ project.id }}">
+                <!-- Project Image -->
+                <div class="project-img-wrap">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-img" loading="lazy" />
+                    {% else %}
+                    <div class="project-img-placeholder">
+                        <span class="placeholder-icon">🖥️</span>
+                    </div>
+                    {% endif %}
+                    <div class="project-img-overlay">
+                        {% if project.project_link %}
+                        <a href="{{ project.project_link }}" target="_blank" rel="noopener noreferrer"
+                            class="overlay-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                                <polyline points="15 3 21 3 21 9" />
+                                <line x1="10" y1="14" x2="21" y2="3" />
+                            </svg>
+                            Live Demo
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                <!-- Project Body -->
+                <div class="project-body">
+                    <!-- Date badge -->
+                    <span class="project-date">
+                        📅 {{ project.created_at|date:"M Y" }}
+                    </span>
+                    <!-- Title -->
+                    <h2 class="project-title">{{ project.title }}</h2>
+                    <!-- Description -->
+                    <p class="project-desc">
+                        {{ project.description|truncatewords:28 }}
+                    </p>
+                    <!-- Technologies -->
+                    <div class="project-tech-wrap">
+                        {% for tech in project.tech_list %}
+                        <span class="tech-badge">{{ tech }}</span>
+                        {% empty %}
+                        <span class="tech-badge">No Technology</span>
+                        {% endfor %}
+                    </div>
+                </div><!-- /.project-body -->
+                <!-- Project Footer -->
+                <div class="project-footer">
+                    {% if project.live_link %}
+                    <a href="{{ project.live_link }}" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary btn-sm project-link-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                        🌐 View Project
+                    </a>
+                    {% else %}
+                    <span class="btn btn-ghost btn-sm">Coming Soon</span>
+                    {% endif %}
+                </div>
+                {% if project.github_link %}
+                <a href="{{ project.github_link }}" target="_blank" class="btn btn-outline btn-sm project-link-btn">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                {% endif %}
+            </article>
+            {% endfor %}
+        </div><!-- /.projects-grid -->
+        {% else %}
+        <!-- ── Empty State ── -->
+        <div class="empty-state projects-empty">
+            <div class="empty-icon-wrap">
+                <span class="empty-icon">🚧</span>
+            </div>
+            <h3 class="empty-title">Projects Coming Soon</h3>
+            <p class="empty-text">
+                No projects have been added yet. Visit the
+                <strong>Django Admin Panel</strong> to add your first project.
+            </p>
+            <a href="{% url 'portfolio:contact' %}" class="btn btn-primary" style="margin-top:1.5rem;">
+                Get In Touch
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</section>
+<!-- ============================================================
+     CTA STRIP
+============================================================ -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-card">
+            <div class="cta-text">
+                <h2 class="cta-title">Have a project in mind?</h2>
+                <p class="cta-subtitle">
+                    I am open to freelance, collaboration, and full-time opportunities.
+                    Let us build something great together!
+                </p>
+            </div>
+            <div class="cta-buttons">
+                <a href="{% url 'portfolio:contact' %}" class="btn btn-primary">Hire Me</a>
+                <a href="{% url 'portfolio:home' %}#skills" class="btn btn-outline-white">View Skills</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block extra_js %}
+<script>
+    // ── Filter Tabs ───────────────────────────────────────────────
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            // Active state
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const filter = btn.getAttribute('data-filter');
+            projectCards.forEach(card => {
+                const tech = card.getAttribute('data-tech') || '';
+                if (filter === 'all' || tech.includes(filter)) {
+                    card.classList.remove('hidden');
+                    card.classList.add('visible');
+                } else {
+                    card.classList.add('hidden');
+                    card.classList.remove('visible');
+                }
+            });
+        });
+    });
+    // ── Card Entrance Animations ──────────────────────────────────
+    const cards = document.querySelectorAll('.project-card');
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.classList.add('animate-in');
+                }, i * 80);
+                cardObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.08 });
+    cards.forEach(card => cardObserver.observe(card));
+</script>
+{% endblock %}

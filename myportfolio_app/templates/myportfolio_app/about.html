@@ -1,0 +1,276 @@
+{% extends "myportfolio_app/base.html" %}
+{% load static %}
+{% block title %}About Me | Muhammad Ali{% endblock %}
+{% block content %}
+<!-- ============================================================
+     PAGE HERO — ABOUT
+============================================================ -->
+<section class="page-hero about-hero">
+    <div class="page-hero-bg-orbs">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+    </div>
+    <div class="container">
+        <div class="about-hero-grid">
+            <div class="about-hero-text">
+                <span class="section-tag">Get To Know Me</span>
+                <h1 class="page-hero-title" style="text-align:left;">
+                    The Person <span class="accent">Behind the Code</span>
+                </h1>
+                <p class="page-hero-subtitle" style="margin:0;">
+                    Developer, problem-solver, and lifelong learner. Here's my story,
+                    what drives me, and how I got here.
+                </p>
+            </div>
+            <div class="about-hero-image-wrap">
+                <div class="about-hero-ring">
+                    <div class="about-hero-frame">
+                        <img src="{% static 'myportfolio_app/images/profile.jpg' %}" alt="Muhammad Ali"
+                            class="about-hero-img"
+                            onerror="this.onerror=null; this.src='{% static 'myportfolio_app/images/profile.jpg' %}';">
+                    </div>
+                </div>
+                <span class="about-badge">🐍 Coding since 2025</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     STATS COUNTER STRIP
+============================================================ -->
+<section class="stats-strip">
+    <div class="container">
+        <div class="stats-strip-grid">
+            <div class="stat-block" data-count="15">
+                <span class="stat-block-number" data-target="15">0</span>
+                <span class="stat-block-plus">+</span>
+                <p class="stat-block-label">Projects Completed</p>
+            </div>
+            <div class="stat-block" data-count="1">
+                <span class="stat-block-number" data-target="1">0</span>
+                <span class="stat-block-plus">+</span>
+                <p class="stat-block-label">Learning Experiences</p>
+            </div>
+            <div class="stat-block" data-count="6">
+                <span class="stat-block-number" data-target="6">0</span>
+                <span class="stat-block-plus">+</span>
+                <p class="stat-block-label">Tecnalogies</p>
+            </div>
+            <div class="stat-block" data-count="1000">
+                <span class="stat-block-number" data-target="1000">0</span>
+                <span class="stat-block-plus">+</span>
+                <p class="stat-block-label">Lines of Code / Day 😄</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     MY STORY SECTION
+============================================================ -->
+<section class="story-section section" id="story">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">My Journey</span>
+            <h2 class="section-title">My <span class="accent">Story</span></h2>
+            <p class="section-subtitle">How curiosity turned into a career.</p>
+        </div>
+
+        <div class="story-timeline">
+            <div class="story-item" data-side="left">
+                <div class="story-dot"></div>
+                <div class="story-card">
+                    <span class="story-year">2025</span>
+                    <h3 class="story-title">First Line of Code</h3>
+                    <p class="story-text">
+                        Wrote my first "Hello, World!" program in Javascript and discovered my passion for programming.
+                        That
+                        first step inspired me to keep learning and building new projects
+                    </p>
+                </div>
+            </div>
+            <div class="story-item" data-side="right">
+                <div class="story-dot"></div>
+                <div class="story-card">
+                    <span class="story-year">2025</span>
+                    <h3 class="story-title">Started Web Development Journey</h3>
+                    <p class="story-text">
+                        Enrolled in the Saylani Mass IT Training (SMIT) Web Development program, where I am learning
+                        Python, Django, HTML, CSS, JavaScript, and modern web development.
+                    </p>
+                </div>
+            </div>
+            <div class="story-item" data-side="left">
+                <div class="story-dot"></div>
+                <div class="story-card">
+                    <span class="story-year">2025</span>
+                    <h3 class="story-title">Discovered Django</h3>
+                    <p class="story-text">
+                        Started learning Django and built my first web application. It showed me how ideas can be turned
+                        into real, interactive websites.
+                    </p>
+                </div>
+            </div>
+            <div class="story-item" data-side="right">
+                <div class="story-dot"></div>
+                <div class="story-card">
+                    <span class="story-year">2026</span>
+                    <h3 class="story-title">First Portfolio Project</h3>
+                    <p class="story-text">
+                        Completed my first portfolio website using Django, HTML, CSS, and JavaScript, applying the
+                        skills I learned to a real project.
+                    </p>
+                </div>
+            </div>
+            <div class="story-item" data-side="left">
+                <div class="story-dot story-dot-current"></div>
+                <div class="story-card story-card-current">
+                    <span class="story-year">Today</span>
+                    <h3 class="story-title">Building for the Future</h3>
+                    <p class="story-text">
+                        Currently learning Django and building real-world web applications. I am continuously improving
+                        my skills and working toward becoming a professional full-stack developer.
+                    </p>
+                </div>
+            </div>
+        </div><!-- /.story-timeline -->
+    </div>
+</section>
+
+<!-- ============================================================
+     VALUES / PHILOSOPHY SECTION
+============================================================ -->
+<section class="values-section section" id="values">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">How I Work</span>
+            <h2 class="section-title">My <span class="accent">Philosophy</span></h2>
+            <p class="section-subtitle">The principles that guide every project I take on.</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3 class="value-title">Purposeful Code</h3>
+                <p class="value-text">I believe every line of code should be clean, readable, and written with a clear
+                    purpose while I continue learning and improving my skills</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3 class="value-title">Honest Communication</h3>
+                <p class="value-text">I believe in clear communication, asking questions when needed, and continuously
+                    learning through feedback and collaboration.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">📈</div>
+                <h3 class="value-title">Continuous Growth</h3>
+                <p class="value-text">I am committed to learning new technologies and improving my skills by building
+                    projects and practicing regularly.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🛡️</div>
+                <h3 class="value-title">Built to Last</h3>
+                <p class="value-text">I focus on writing clean, organized, and maintainable code while continuously
+                    improving my development skills.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     BEYOND CODE SECTION
+============================================================ -->
+<section class="beyond-section section" id="beyond">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Off the Clock</span>
+            <h2 class="section-title">Beyond <span class="accent">the Code</span></h2>
+            <p class="section-subtitle">A few things that make me, me.</p>
+        </div>
+        <div class="beyond-grid">
+            <div class="beyond-card">
+                <span class="beyond-emoji">☕</span>
+                <h4>Coffee Enthusiast</h4>
+                <p>Powered by a good cup of coffee and quiet early mornings.</p>
+            </div>
+            <div class="beyond-card">
+                <span class="beyond-emoji">💻 </span>
+                <h4>Coding Enthusiast</h4>
+                <p>I enjoy learning new programming concepts and building projects that strengthen my development
+                    skills.</p>
+            </div>
+            <div class="beyond-card">
+                <span class="beyond-emoji">🏏</span>
+                <h4>Cricket Enthusiast</h4>
+                <p>When I'm not coding, I enjoy playing and watching cricket to relax and stay active.</p>
+            </div>
+            <div class="beyond-card">
+                <span class="beyond-emoji">👨‍💻</span>
+                <h4>Future Software Engineer</h4>
+                <p>Working every day to improve my skills and build a strong foundation for a career in software
+                    development.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CTA BANNER
+============================================================ -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-card">
+            <div class="cta-text">
+                <h2 class="cta-title">Want to work together?</h2>
+                <p class="cta-subtitle">I'd love to hear about your project and see how I can help bring it to life.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="{% url 'portfolio:contact' %}" class="btn btn-primary">Get In Touch</a>
+                <a href="{% url 'portfolio:projects' %}" class="btn btn-outline-white">See My Work</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block extra_js %}
+<script>
+    // ── Animated Number Counters ──────────────────────────────────
+    const statNumbers = document.querySelectorAll('.stat-block-number');
+    function animateCount(el) {
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const duration = 1400;
+        const start = performance.now();
+        function tick(now) {
+            const progress = Math.min((now - start) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(eased * target).toLocaleString();
+            if (progress < 1) requestAnimationFrame(tick);
+            else el.textContent = target.toLocaleString();
+        }
+        requestAnimationFrame(tick);
+    }
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCount(entry.target);
+                statObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+    statNumbers.forEach(el => statObserver.observe(el));
+
+    // ── Story Timeline & Cards Entrance ────────────────────────────
+    const revealEls = document.querySelectorAll(
+        '.story-item, .value-card, .beyond-card'
+    );
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => revealObserver.observe(el));
+</script>
+{% endblock %}

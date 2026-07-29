@@ -1,0 +1,477 @@
+{% extends "myportfolio_app/base.html" %}
+{% load static %}
+{% block title %}Muhammad Ali | Python & Django Developer{% endblock %}
+{% block nav_home %}active{% endblock %}
+{% block content %}
+<!-- ============================================================
+     HERO SECTION
+============================================================ -->
+
+
+<section class="hero" id="hero">
+    <div class="hero-bg-orbs">
+        <span class="orb orb-1"></span>
+        <span class="orb orb-2"></span>
+        <span class="orb orb-3"></span>
+    </div>
+    <div class="hero-container">
+        <!-- Hero Text -->
+        <div class="hero-text" data-aos="fade-right">
+            <p class="hero-greeting">👋 Hello, I am</p>
+            <h1 class="hero-name">Muhammad <span class="accent">Ali</span></h1>
+            <div class="hero-profession">
+                <span class="profession-prefix">I am a </span>
+                <span class="typed-wrapper">
+                    <span class="typed-text" id="typedText"></span>
+                    <span class="typed-cursor">|</span>
+                </span>
+            </div>
+            <p class="hero-intro">
+                Passionate about crafting beautiful, high-performance web applications
+                using Python &amp; Django. I turn ideas into elegant digital solutions.
+            </p>
+            <div class="hero-buttons">
+                <a href="{% url 'portfolio:projects' %}" class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="3" width="20" height="14" rx="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                    View Projects
+                </a>
+                <a href="{% url 'portfolio:contact' %}" class="btn btn-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                    </svg>
+                    Contact Me
+                </a>
+
+
+            </div>
+            <!-- Quick Stats -->
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Projects Done</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <span class="stat-number">6+</span>
+                    <span class="stat-label">Technologies</span>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+
+                    <span class="stat-number">1+</span>
+                    <span class="stat-label">Year Learning</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Hero Image -->
+
+        <div class="hero-image-wrapper">
+            <div class="hero-image-ring">
+                <div class="hero-image-frame">
+                    <img src="{% static 'myportfolio_app/images/profile.png' %}" alt="RRRRRRMuhammad Ali"
+                        class="hero-image"
+                        onerror="this.onerror=null; this.src='{% static 'myportfolio_app/images/profile_placeholder.svg' %}';">
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating badges -->
+        <div class="float-badge badge-python">
+            <span>🐍</span> Python
+        </div>
+        <div class="float-badge badge-django">
+            <span>🌿</span> Django
+        </div>
+    </div>
+    </div>
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+        <span class="scroll-dot"></span>
+        <span class="scroll-dot"></span>
+        <span class="scroll-dot"></span>
+    </div>
+
+
+</section>
+<!-- ============================================================
+     ABOUT SECTION
+============================================================ -->
+<section class="about-section section" id="about">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Who I Am</span>
+            <h2 class="section-title">About <span class="accent">Me</span></h2>
+            <p class="section-subtitle">A little bit about my journey, passions, and what drives me forward.</p>
+        </div>
+        <div class="about-grid">
+            <!-- Biography Card -->
+            <div class="about-card card-biography">
+                <div class="about-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                        <circle cx="12" cy="7" r="4" />
+                    </svg>
+                </div>
+                <h3 class="about-card-title">Biography</h3>
+                <p class="about-card-text">
+                    Hi! I am <strong>Muhammad Ali</strong>,an aspiring Python and Django developer
+                    currently learning and building web applications. I enjoy turning ideas into functional websites
+                    while improving my skills in Python, Django, HTML, CSS, and JavaScript. I'm always eager to learn
+                    new technologies and take on exciting challenges.
+
+                </p>
+            </div>
+            <!-- Interests Card -->
+            <div class="about-card card-interests">
+                <div class="about-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                    </svg>
+                </div>
+                <h3 class="about-card-title">Interests</h3>
+                <ul class="interest-list">
+                    <li class="interest-item"><span class="interest-icon">🌐</span> Web Development &amp; API Design
+                    </li>
+                    <li class="interest-item"><span class="interest-icon">🤖</span> Machine Learning &amp; AI</li>
+                    <li class="interest-item"><span class="interest-icon">🎨</span> UI/UX &amp; Visual Design</li>
+                    <li class="interest-item"><span class="interest-icon">📖</span> Open Source Contribution</li>
+                    <li class="interest-item"><span class="interest-icon">☁️</span> Cloud Architecture &amp; DevOps</li>
+                </ul>
+            </div>
+            <!-- Personal Strengths Card -->
+            <div class="about-card card-strengths">
+                <div class="about-card-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polygon
+                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                    </svg>
+                </div>
+                <h3 class="about-card-title">Personal Strengths</h3>
+                <div class="strengths-grid">
+                    <div class="strength-chip">🎯 Problem Solver</div>
+                    <div class="strength-chip">🔄 Fast Learner</div>
+                    <div class="strength-chip">🤝 Team Player</div>
+                    <div class="strength-chip">⚡ Detail Oriented</div>
+                    <div class="strength-chip">💬 Communicator</div>
+                    <div class="strength-chip">🧘 Adaptable</div>
+                </div>
+            </div>
+        </div><!-- /.about-grid -->
+    </div>
+</section>
+<!-- ============================================================
+     EDUCATION SECTION
+============================================================ -->
+<section class="education-section section" id="education">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">Academic Background</span>
+            <h2 class="section-title">My <span class="accent">Education</span></h2>
+            <p class="section-subtitle">The academic milestones that shaped my technical foundation.</p>
+        </div>
+        <div class="timeline">
+            <!-- Education Item 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-degree">
+                            <span class="degree-icon">🎓</span>
+                            <div>
+                                <h3 class="degree-title">Intermediate in Computer Science (ICS)</h3>
+                                <p class="degree-school">DJ College</p>
+                            </div>
+                        </div>
+                        <span class="timeline-badge">2026</span>
+                    </div>
+                    <p class="timeline-desc">
+                        Currently pursuing Intermediate in Computer Science while learning Python, Django, HTML, CSS,
+                        and JavaScript. Building practical projects to strengthen my web development skills.
+                    </p>
+                    <div class="timeline-tags">
+                        <span class="tag">Computer Science</span>
+                        <span class="tag">Software Engineering</span>
+                        <span class="tag">Web Technologies</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Education Item 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-degree">
+                            <span class="degree-icon">🌐 </span>
+                            <div>
+                                <h3 class="degree-title">Web Development</h3>
+                                <p class="degree-school">Aptech Learning</p>
+                            </div>
+                        </div>
+                        <span class="timeline-badge">2025</span>
+                    </div>
+                    <p class="timeline-desc">
+                        Currently learning modern <strong>web development</strong> with a focus on building responsive
+                        and dynamic web
+                        applications. Developing practical skills in HTML, CSS, JavaScript, Python, and Django by
+                        creating real-world projects and improving problem-solving abilities.
+                    </p>
+                    <div class="timeline-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Education Item 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-degree">
+                            <span class="degree-icon">💻</span>
+                            <div>
+                                <h3 class="degree-title">Artificial Intelligence & Data Science</h3>
+                                <p class="degree-school">Saylani mass it training (SMIT)</p>
+                            </div>
+                        </div>
+                        <span class="timeline-badge">2026</span>
+                    </div>
+                    <p class="timeline-desc">
+                        Currently pursuing an <strong> Artificial Intelligence & Data Science </strong>program, focusing
+                        on Python
+                        programming, Data Science fundamentals, Machine Learning basics, and Django web development.
+                        Gaining practical experience by building real-world projects, improving problem-solving skills,
+                        and applying modern development practices.
+                    </p>
+                    <div class="timeline-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Data Science</span>
+                    </div>
+                </div>
+            </div>
+        </div><!-- /.timeline -->
+    </div>
+</section>
+<!-- ============================================================
+     CAREER GOAL SECTION
+============================================================ -->
+<section class="career-section section" id="career">
+    <div class="container">
+        <div class="career-card">
+            <div class="career-left">
+                <span class="section-tag">Future Vision</span>
+                <h2 class="section-title" style="text-align:left; margin-bottom: 1rem;">
+                    Career <span class="accent">Goals</span>
+                </h2>
+                <p class="career-text">
+                    My primary goal is to become a <strong>Full-Stack Django Architect</strong> — designing
+                    and delivering enterprise-grade web platforms that are fast, secure, and maintainable.
+                </p>
+                <p class="career-text" style="margin-top: 1rem;">
+                    In the next 3 years, I aim to contribute to open-source Django projects, earn an
+                    AWS Solutions Architect certification, and lead a development team building
+                    SaaS products used by thousands of users worldwide.
+                </p>
+                <div class="career-goals-list">
+                    <div class="career-goal-item">
+                        <span class="goal-check">✔</span>
+                        <span>Master Django REST Framework &amp; GraphQL</span>
+                    </div>
+                    <div class="career-goal-item">
+                        <span class="goal-check">✔</span>
+                        <span>Become an AWS Certified Solutions Architect</span>
+                    </div>
+                    <div class="career-goal-item">
+                        <span class="goal-check">✔</span>
+                        <span>Build and launch a SaaS product from scratch</span>
+                    </div>
+                    <div class="career-goal-item">
+                        <span class="goal-check">✔</span>
+                        <span>Lead and mentor a growing engineering team</span>
+                    </div>
+                    <div class="career-goal-item">
+                        <span class="goal-check">✔</span>
+                        <span>Contribute significantly to open-source</span>
+                    </div>
+                </div>
+            </div>
+            <div class="career-right">
+                <div class="career-illustration">
+                    <div class="career-icon-big">🚀</div>
+                    <p class="career-icon-label">Building the Future</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ============================================================ -->
+
+<section class="skills-section section" id="skills">
+    <div class="container">
+
+        <div class="section-header">
+            <span class="section-tag">What I Know</span>
+            <h2 class="section-title">My <span class="accent">Skills</span></h2>
+            <p class="section-subtitle">
+                Technologies and tools I use to bring ideas to life.
+            </p>
+        </div>
+
+        {% if skills %}
+        <div class="skills-grid">
+
+            {% for skill in skills %}
+            <div class="skill-card">
+
+                <div class="skill-icon-wrap">
+                    <span class="skill-emoji">
+                        {% if 'python' in skill.name|lower %}🐍
+                        {% elif 'django' in skill.name|lower %}🌿
+                        {% elif 'html' in skill.name|lower %}🌐
+                        {% elif 'css' in skill.name|lower %}🎨
+                        {% elif 'javascript' in skill.name|lower or 'js' in skill.name|lower %}⚡
+                        {% elif 'sql' in skill.name|lower or 'database' in skill.name|lower %}🗄️
+                        {% elif 'git' in skill.name|lower %}🔧
+                        {% elif 'bootstrap' in skill.name|lower %}🅱️
+                        {% elif 'design' in skill.name|lower %}✏️
+                        {% elif 'numpy' in skill.name|lower %}🔢
+                        {% elif 'express' in skill.name|lower %}🚂
+                        {% elif 'react' in skill.name|lower %}⚛️
+                        {% elif 'pandas' in skill.name|lower %}🐼
+                        {% elif 'mongodb' in skill.name|lower %}🍃
+                        {% elif 'mysql' in skill.name|lower %}🐬
+                        {% elif 'firebase' in skill.name|lower %}🔥
+                        {% elif 'node' in skill.name|lower %}🟢
+                        {% elif 'api' in skill.name|lower or 'rest' in skill.name|lower %}🔗
+                        {% elif 'mysql' in skill.name|lower %}🐬
+                        {% elif 'postgresql' in skill.name|lower %}🐘
+                        {% elif 'sqlite' in skill.name|lower %}💾
+                        {% else %}💡
+                        {% endif %}
+                    </span>
+                </div>
+
+                <h3 class="skill-name">{{ skill.name }}</h3>
+
+                <div class="skill-level-wrap">
+                    <span class="skill-level-label">{{ skill.percentage }}%</span>
+
+                    <div class="skill-bar-track">
+                        <div class="skill-bar-fill" data-level="{{ skill.percentage }}" style="width:0%;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            {% endfor %}
+
+        </div>
+
+        {% else %}
+
+        <p>No skills added yet.</p>
+
+        {% endif %}
+
+    </div>
+</section>
+
+<!-- Fallback when no skills are in the database yet -->
+<div class="empty-state">
+    <span class="empty-icon">🛠️</span>
+    <p>Skills are being updated. Please check back soon!</p>
+</div>
+
+</div>
+</section>
+<!-- ============================================================
+     CTA BANNER
+============================================================ -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-card">
+            <div class="cta-text">
+                <h2 class="cta-title">Ready to work together?</h2>
+                <p class="cta-subtitle">Let's build something amazing. I am currently available for freelance and
+                    full-time opportunities.</p>
+            </div>
+            <div class="cta-buttons">
+                <a href="{% url 'portfolio:contact' %}" class="btn btn-primary">Get In Touch</a>
+                <a href="{% url 'portfolio:projects' %}" class="btn btn-outline-white">See My Work</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block extra_js %}
+<script>
+    // ── Typewriter Effect ─────────────────────────────────────────
+    const words = ['Python Developer', 'Django Developer', 'Web Developer', 'Backend Engineer', 'Open Source Contributor'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typedEl = document.getElementById('typedText');
+    function type() {
+        const currentWord = words[wordIndex];
+        if (isDeleting) {
+            typedEl.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+        } else {
+            typedEl.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+        }
+        let delay = isDeleting ? 60 : 110;
+        if (!isDeleting && charIndex === currentWord.length) {
+            delay = 1800;   // pause at end of word
+            isDeleting = true;
+        } else if (isDeleting && charIndex === 0) {
+            isDeleting = false;
+            wordIndex = (wordIndex + 1) % words.length;
+            delay = 400;
+        }
+        setTimeout(type, delay);
+    }
+    type();
+    // ── Animate Skill Bars on scroll ──────────────────────────────
+    const skillFills = document.querySelectorAll('.skill-bar-fill');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const fill = entry.target;
+                const level = fill.getAttribute('data-level').trim();
+                fill.style.transition = 'width 1.1s cubic-bezier(0.4, 0, 0.2, 1)';
+                fill.style.width = level + '%';
+                observer.unobserve(fill);
+            }
+        });
+    }, { threshold: 0.4 });
+    skillFills.forEach(fill => observer.observe(fill));
+    // ── Entrance Animations (IntersectionObserver) ─────────────────
+    const animEls = document.querySelectorAll(
+        '.about-card, .timeline-card, .skill-card, .career-card'
+    );
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+                fadeObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+    animEls.forEach(el => fadeObserver.observe(el));
+</script>
+{% endblock %}
