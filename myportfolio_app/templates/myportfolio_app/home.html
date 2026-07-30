@@ -446,6 +446,28 @@
         setTimeout(type, delay);
     }
     type();
+
+    // Welcome Voice
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        alert("👋 Welcome! Click OK to hear my introduction.");
+
+        const speech = new SpeechSynthesisUtterance(
+            "Welcome to my portfolio website. My name is Muhammad Ali. I am a Python and Django Developer. Thank you for visiting my portfolio."
+        );
+
+        speech.lang = "en-US";
+        speech.rate = 1;
+        speech.pitch = 1;
+        speech.volume = 1;
+
+        speechSynthesis.speak(speech);
+
+    }, 1000);
+
+});
     // ── Animate Skill Bars on scroll ──────────────────────────────
     const skillFills = document.querySelectorAll('.skill-bar-fill');
     const observer = new IntersectionObserver((entries) => {
