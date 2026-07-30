@@ -1396,8 +1396,10 @@ img {
     }
 
     .hero-image-ring {
-        width: 280px;
-        height: 280px;
+        width: 85%;
+        max-width: 380px;
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 
     .about-grid {
@@ -1427,8 +1429,10 @@ img {
     }
 
     .hero-image-ring {
-        width: 220px;
-        height: 220px;
+        width: 80%;
+        max-width: 320px;
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 
     .hero-intro {
@@ -1468,8 +1472,10 @@ img {
 
 @media (max-width: 400px) {
     .hero-image-ring {
-        width: 190px;
-        height: 190px;
+        width: 78%;
+        max-width: 260px;
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 
     .float-badge {
